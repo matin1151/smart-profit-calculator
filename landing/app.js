@@ -1,0 +1,32 @@
+const $ = (id) => document.getElementById(id);
+const inputs = ['dCost','dShipping','dFee','dPrice','dTarget'].map($);
+const money = n => '$' + (Number.isFinite(n) ? n : 0).toFixed(2);
+function updateDemo(){
+  const cost = Math.max(0, +$('dCost').value || 0);
+  const shipping = Math.max(0, +$('dShipping').value || 0);
+  const fee = Math.min(100, Math.max(0, +$('dFee').value || 0));
+  const price = Math.max(0, +$('dPrice').value || 0);
+  const target = Math.min(60, Math.max(10, +$('dTarget').value || 30));
+  const trueCost = cost + shipping;
+  const net = price * (1 - fee/100);
+  const profit = net - trueCost;
+  const margin = price > 0 ? profit / price * 100 : 0;
+  const breakEven = (1 - fee/100) > 0 ? trueCost / (1 - fee/100) : 0;
+  const recommended = (1 - fee/100 - target/100) > 0 ? trueCost / (1 - fee/100 - target/100) : 0;
+  $('dTargetValue').textContent = target + '%';
+  $('rRecommended').textContent = money(recommended);
+  $('rTarget').textContent = `for a ${target}% target margin`;
+  $('rCost').textContent = money(trueCost);
+  $('rProfit').textContent = money(profit);
+  $('rMargin').textContent = margin.toFixed(2) + '%';
+  $('rBreakEven').textContent = money(breakEven);
+  const ratio = Math.max(0, Math.min(100, margin / Math.max(target,1) * 100));
+  $('meterFill').style.width = ratio + '%';
+  $('rStatus').textContent = margin >= target ? 'Above your target margin' : 'Below your target margin';
+  $('rProfit').classList.toggle('negative', profit < 0);
+}
+inputs.forEach(el => el && el.addEventListener('input', updateDemo));
+updateDemo();
+const menu = document.querySelector('.menu'), nav = document.querySelector('#navLinks');
+menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', open); });
+nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
