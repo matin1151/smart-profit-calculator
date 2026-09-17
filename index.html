@@ -3,122 +3,118 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Advanced pricing and profit calculator for small businesses.">
+<meta name="description" content="Smart Profit Calculator Pro — calculate true costs, profit, break-even and recommended pricing.">
 <title>Smart Profit Calculator Pro</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
   <div class="brand"><span class="logo">SP</span><span>Smart Profit</span></div>
-  <span class="badge">Pricing & Profit Tool</span>
+  <span class="badge">PRO · Pricing Intelligence</span>
 </header>
 
 <main class="container">
 <section class="hero">
   <p class="eyebrow">SMALL BUSINESS PRICING TOOL</p>
-  <h1>Price smarter. Know your real profit.</h1>
-  <p>Calculate your true unit economics, selling price, fees, taxes, discounts and target profit in seconds.</p>
+  <h1>Price smarter.<br><span>Know your real profit.</span></h1>
+  <p class="hero-copy">Turn every cost, fee, discount and tax into one clear pricing decision — in seconds.</p>
+  <div class="hero-pills">
+    <span>✓ True unit economics</span><span>✓ Target margin pricing</span><span>✓ Break-even analysis</span>
+  </div>
 </section>
 
-<section class="card">
-  <div class="section-title">
-    <div><h2>Cost & pricing inputs</h2><p>Enter your numbers and the calculator updates instantly.</p></div>
-    <button id="reset" class="secondary">Reset</button>
+<section class="card calculator">
+  <div class="section-head">
+    <div>
+      <span class="section-kicker">STEP 1</span>
+      <h2>Your pricing inputs</h2>
+      <p>Enter your numbers. Results update instantly.</p>
+    </div>
+    <button id="reset" class="secondary">↻ Reset</button>
   </div>
 
-  <div class="grid">
-    <label>Product / service
-      <input id="product" placeholder="e.g. Handmade candle">
-    </label>
-    <label>Currency
-      <select id="currency">
-        <option value="$">$ USD</option><option value="€">€ EUR</option>
-        <option value="£">£ GBP</option><option value="﷼">﷼ IRR</option>
-      </select>
-    </label>
-    <label>Units sold
-      <input id="units" type="number" min="1" step="1" value="1">
-    </label>
-    <label>Purchase cost / unit
-      <input id="purchase" type="number" min="0" step="0.01" value="20">
-    </label>
-    <label>Shipping / unit
-      <input id="shipping" type="number" min="0" step="0.01" value="5">
-    </label>
-    <label>Packaging / unit
-      <input id="packaging" type="number" min="0" step="0.01" value="2">
-    </label>
-    <label>Labor / unit
-      <input id="labor" type="number" min="0" step="0.01" value="3">
-    </label>
-    <label>Other cost / unit
-      <input id="other" type="number" min="0" step="0.01" value="1">
-    </label>
-    <label>Selling price / unit
-      <input id="selling" type="number" min="0" step="0.01" value="49">
-    </label>
-    <label>Platform fee %
-      <input id="platformFee" type="number" min="0" max="100" step="0.1" value="8">
-    </label>
-    <label>Payment fee %
-      <input id="paymentFee" type="number" min="0" max="100" step="0.1" value="3">
-    </label>
-    <label>Payment fixed fee / order
-      <input id="fixedFee" type="number" min="0" step="0.01" value="0.30">
-    </label>
-    <label>Advertising cost / order
-      <input id="ads" type="number" min="0" step="0.01" value="2">
-    </label>
-    <label>Tax / VAT %
-      <input id="tax" type="number" min="0" max="100" step="0.1" value="5">
-    </label>
-    <label>Discount %
-      <input id="discount" type="number" min="0" max="100" step="0.1" value="0">
-    </label>
-    <label>Target profit margin %
-      <input id="targetMargin" type="number" min="0" max="99.9" step="0.1" value="30">
-    </label>
-  </div>
-
-  <div class="results">
-    <div class="metric"><span>True cost / unit</span><strong id="cost">$31.00</strong></div>
-    <div class="metric"><span>Net revenue / unit</span><strong id="netRevenue">$43.05</strong></div>
-    <div class="metric"><span>Net profit / unit</span><strong id="profit">$12.05</strong></div>
-    <div class="metric"><span>Profit margin</span><strong id="margin">28.00%</strong></div>
-    <div class="metric"><span>Markup</span><strong id="markup">38.87%</strong></div>
-    <div class="metric"><span>ROI</span><strong id="roi">38.87%</strong></div>
-    <div class="metric"><span>Break-even price</span><strong id="breakEven">$35.41</strong></div>
-    <div class="metric highlight"><span>Recommended price</span><strong id="recommended">$45.07</strong></div>
-    <div class="metric"><span>Estimated total profit</span><strong id="totalProfit">$12.05</strong></div>
-  </div>
-
-  <div class="bar"><div id="profitBar"></div></div>
-  <div class="insight" id="message">Your current price is close to your target margin.</div>
-
-  <div class="summary">
-    <h3>Pricing summary</h3>
-    <div class="summary-grid">
-      <div><span>Gross sales</span><b id="grossSales">$49.00</b></div>
-      <div><span>Total fees</span><b id="fees">$4.35</b></div>
-      <div><span>Tax</span><b id="taxAmount">$2.45</b></div>
-      <div><span>Total variable costs</span><b id="variableCosts">$31.00</b></div>
+  <div class="group">
+    <div class="group-title"><span>01</span><div><h3>Product & sales</h3><small>Basic information about what you sell</small></div></div>
+    <div class="grid">
+      <label>Product / service <input id="product" placeholder="e.g. Handmade candle"></label>
+      <label>Currency <select id="currency"><option value="$">$ USD</option><option value="€">€ EUR</option><option value="£">£ GBP</option><option value="﷼">﷼ IRR</option></select></label>
+      <label>Units sold <input id="units" type="number" min="1" step="1" value="1"></label>
+      <label>Selling price / unit <input id="selling" type="number" min="0" step="0.01" value="49"></label>
     </div>
   </div>
 
-  <button id="copy" class="primary">Copy results</button>
-  <span id="copied" class="copied" aria-live="polite"></span>
+  <div class="group">
+    <div class="group-title"><span>02</span><div><h3>Cost per unit</h3><small>Include every direct cost that goes into one sale</small></div></div>
+    <div class="grid">
+      <label>Purchase cost / unit <input id="purchase" type="number" min="0" step="0.01" value="20"></label>
+      <label>Shipping / unit <input id="shipping" type="number" min="0" step="0.01" value="5"></label>
+      <label>Packaging / unit <input id="packaging" type="number" min="0" step="0.01" value="2"></label>
+      <label>Labor / unit <input id="labor" type="number" min="0" step="0.01" value="3"></label>
+      <label>Other cost / unit <input id="other" type="number" min="0" step="0.01" value="1"></label>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title"><span>03</span><div><h3>Fees, tax & pricing adjustments</h3><small>Costs that can quietly reduce your real profit</small></div></div>
+    <div class="grid">
+      <label>Platform fee % <input id="platformFee" type="number" min="0" max="100" step="0.1" value="8"></label>
+      <label>Payment fee % <input id="paymentFee" type="number" min="0" max="100" step="0.1" value="3"></label>
+      <label>Payment fixed fee / order <input id="fixedFee" type="number" min="0" step="0.01" value="0.30"></label>
+      <label>Advertising cost / order <input id="ads" type="number" min="0" step="0.01" value="2"></label>
+      <label>Tax / VAT % <input id="tax" type="number" min="0" max="100" step="0.1" value="5"></label>
+      <label>Discount % <input id="discount" type="number" min="0" max="100" step="0.1" value="0"></label>
+      <label>Target profit margin % <input id="targetMargin" type="number" min="0" max="99.9" step="0.1" value="30"></label>
+    </div>
+  </div>
+
+  <div class="results-wrap">
+    <div class="result-heading"><div><span class="section-kicker">STEP 2</span><h2>Your pricing decision</h2></div><span id="status" class="status positive">PROFITABLE</span></div>
+    <div class="hero-result">
+      <div><span>Recommended selling price</span><small>Based on your target margin and current costs</small></div>
+      <strong id="recommended">$45.07</strong>
+    </div>
+    <div class="results">
+      <div class="metric"><span>True cost / unit</span><strong id="cost">$31.00</strong></div>
+      <div class="metric"><span>Net revenue / unit</span><strong id="netRevenue">$43.05</strong></div>
+      <div class="metric"><span>Net profit / unit</span><strong id="profit">$12.05</strong></div>
+      <div class="metric"><span>Profit margin</span><strong id="margin">28.00%</strong></div>
+      <div class="metric"><span>Markup</span><strong id="markup">38.87%</strong></div>
+      <div class="metric"><span>ROI</span><strong id="roi">38.87%</strong></div>
+      <div class="metric"><span>Break-even price</span><strong id="breakEven">$35.41</strong></div>
+      <div class="metric"><span>Estimated total profit</span><strong id="totalProfit">$12.05</strong></div>
+    </div>
+
+    <div class="bar-label"><span>Current profit margin</span><b id="barValue">28.00%</b></div>
+    <div class="bar"><div id="profitBar"></div></div>
+    <div class="insight" id="message">Your current margin is below your target. The recommended price is $45.07 per unit.</div>
+
+    <div class="summary">
+      <h3>Sales breakdown</h3>
+      <div class="summary-grid">
+        <div><span>Gross sales</span><b id="grossSales">$49.00</b></div>
+        <div><span>Total fees & tax</span><b id="fees">$9.80</b></div>
+        <div><span>Tax / VAT</span><b id="taxAmount">$2.45</b></div>
+        <div><span>Total costs</span><b id="variableCosts">$40.80</b></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="copy" class="primary">Copy results</button>
+      <span id="copied" class="copied" aria-live="polite"></span>
+    </div>
+  </div>
 </section>
 
 <section class="how">
-  <h2>What this calculator considers</h2>
+  <div class="section-head compact"><div><span class="section-kicker">WHY IT MATTERS</span><h2>Price with the full picture</h2><p>Most businesses look at purchase cost. Smart Profit looks at the economics of the entire sale.</p></div></div>
   <div class="features">
-    <div><b>True unit economics</b><p>Purchase, shipping, packaging, labor and other unit costs.</p></div>
-    <div><b>Real selling costs</b><p>Platform fees, payment fees, advertising, tax and discounts.</p></div>
-    <div><b>Target pricing</b><p>Calculate a price designed around your target profit margin.</p></div>
+    <div><span class="feature-icon">01</span><b>True unit economics</b><p>Purchase, shipping, packaging, labor and other direct costs.</p></div>
+    <div><span class="feature-icon">02</span><b>Real selling costs</b><p>Platform fees, payment fees, advertising, tax and discounts.</p></div>
+    <div><span class="feature-icon">03</span><b>Target-based pricing</b><p>See the price required to reach the profit margin you want.</p></div>
   </div>
 </section>
 </main>
-<footer>Smart Profit Calculator Pro · Open source · Built for small businesses</footer>
+<footer>Smart Profit Calculator Pro · Pricing intelligence for small businesses</footer>
 <script src="app.js"></script>
 </body>
 </html>
