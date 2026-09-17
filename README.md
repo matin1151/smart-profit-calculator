@@ -1,17 +1,18 @@
-# Smart Profit Calculator Pro 2.0
+# Smart Profit Calculator Pro 3.1
 
-A premium browser-based pricing and profit calculator for small businesses.
+A colorful, responsive browser-based pricing intelligence tool for small businesses.
 
 ## Features
-- True cost per unit
-- Platform, payment and advertising fees
-- Tax/VAT and discounts
+- True unit economics and pricing
+- Platform/payment fees, ads, tax/VAT and discounts
 - Target-margin recommended price
-- Break-even price
-- Profit margin, markup and ROI
-- Total profit and sales breakdown
-- Copy results
-- Responsive mobile-friendly design
+- Break-even price and break-even units
+- Monthly and annualized profit forecast
+- Save calculations in the browser
+- Product comparison table
+- Print / Save as PDF report
+- Responsive mobile design
+- No backend required
 
 ## GitHub Pages
-Upload `index.html`, `style.css`, and `app.js` to the root of the `main` branch, then publish GitHub Pages from `main` / root.
+Upload `index.html`, `style.css`, and `app.js` to the root of the `main` branch.
