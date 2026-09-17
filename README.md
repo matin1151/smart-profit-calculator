@@ -1,4 +1,4 @@
-# Smart Profit Calculator Pro 3.1
+# Smart Profit Calculator Pro 3.2
 
 A colorful, responsive browser-based pricing intelligence tool for small businesses.
 
