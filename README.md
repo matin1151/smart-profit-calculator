@@ -1,26 +1,29 @@
-# Smart Profit Calculator
+# Smart Profit Calculator Pro
 
-A clean, responsive profit calculator for small businesses.
+An advanced browser-based pricing and profit calculator for small businesses.
 
 ## Features
-- True cost calculation
-- Profit calculation
-- Profit margin
-- Markup / ROI
+- Unit-level cost calculation
+- Shipping, packaging, labor and other costs
+- Platform and payment fees
+- Fixed payment fee
+- Advertising cost
+- Tax / VAT
+- Discounts
+- Target profit margin
 - Break-even selling price
-- USD, EUR, GBP and IRR display
+- Recommended selling price
+- Profit, margin, markup and ROI
+- Total profit based on units sold
+- Copy results
 - Responsive design
 - No backend or dependencies
 
 ## Run locally
 Open `index.html` in a browser.
 
-## Publish on GitHub Pages
-1. Create a new GitHub repository.
-2. Upload `index.html`, `style.css`, `app.js`, and `README.md`.
-3. Open **Settings → Pages**.
-4. Select **Deploy from a branch**, choose `main` and `/root`.
-5. Save. GitHub will provide a public demo URL.
+## GitHub Pages
+Upload `index.html`, `style.css`, and `app.js` to the root of your repository and publish the `main` branch from `/ (root)`.
 
 ## License
 MIT

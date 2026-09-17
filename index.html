@@ -1,75 +1,124 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A free profit margin, markup and break-even calculator for small businesses.">
-  <title>Smart Profit Calculator</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Advanced pricing and profit calculator for small businesses.">
+<title>Smart Profit Calculator Pro</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="logo">SP</span><span>Smart Profit</span></div>
-    <span class="badge">Free business tool</span>
-  </header>
+<header class="topbar">
+  <div class="brand"><span class="logo">SP</span><span>Smart Profit</span></div>
+  <span class="badge">Pricing & Profit Tool</span>
+</header>
 
-  <main class="container">
-    <section class="hero">
-      <p class="eyebrow">SMALL BUSINESS TOOL</p>
-      <h1>Know your profit before you sell.</h1>
-      <p>Calculate true cost, profit, margin, markup and break-even price in seconds.</p>
-    </section>
+<main class="container">
+<section class="hero">
+  <p class="eyebrow">SMALL BUSINESS PRICING TOOL</p>
+  <h1>Price smarter. Know your real profit.</h1>
+  <p>Calculate your true unit economics, selling price, fees, taxes, discounts and target profit in seconds.</p>
+</section>
 
-    <section class="card">
-      <div class="grid">
-        <label>Product / service
-          <input id="product" placeholder="e.g. Coffee machine">
-        </label>
-        <label>Currency
-          <select id="currency">
-            <option value="$">$ USD</option><option value="€">€ EUR</option>
-            <option value="£">£ GBP</option><option value="﷼">﷼ IRR</option>
-          </select>
-        </label>
-        <label>Purchase cost
-          <input id="purchase" type="number" min="0" step="0.01" value="100">
-        </label>
-        <label>Shipping & delivery
-          <input id="shipping" type="number" min="0" step="0.01" value="10">
-        </label>
-        <label>Other costs
-          <input id="other" type="number" min="0" step="0.01" value="5">
-        </label>
-        <label>Selling price
-          <input id="selling" type="number" min="0" step="0.01" value="180">
-        </label>
-      </div>
+<section class="card">
+  <div class="section-title">
+    <div><h2>Cost & pricing inputs</h2><p>Enter your numbers and the calculator updates instantly.</p></div>
+    <button id="reset" class="secondary">Reset</button>
+  </div>
 
-      <div class="results">
-        <div class="metric"><span>True cost</span><strong id="cost">$115.00</strong></div>
-        <div class="metric"><span>Profit</span><strong id="profit">$65.00</strong></div>
-        <div class="metric"><span>Profit margin</span><strong id="margin">36.11%</strong></div>
-        <div class="metric"><span>Markup</span><strong id="markup">56.52%</strong></div>
-        <div class="metric"><span>Break-even price</span><strong id="breakEven">$115.00</strong></div>
-        <div class="metric"><span>ROI</span><strong id="roi">56.52%</strong></div>
-      </div>
+  <div class="grid">
+    <label>Product / service
+      <input id="product" placeholder="e.g. Handmade candle">
+    </label>
+    <label>Currency
+      <select id="currency">
+        <option value="$">$ USD</option><option value="€">€ EUR</option>
+        <option value="£">£ GBP</option><option value="﷼">﷼ IRR</option>
+      </select>
+    </label>
+    <label>Units sold
+      <input id="units" type="number" min="1" step="1" value="1">
+    </label>
+    <label>Purchase cost / unit
+      <input id="purchase" type="number" min="0" step="0.01" value="20">
+    </label>
+    <label>Shipping / unit
+      <input id="shipping" type="number" min="0" step="0.01" value="5">
+    </label>
+    <label>Packaging / unit
+      <input id="packaging" type="number" min="0" step="0.01" value="2">
+    </label>
+    <label>Labor / unit
+      <input id="labor" type="number" min="0" step="0.01" value="3">
+    </label>
+    <label>Other cost / unit
+      <input id="other" type="number" min="0" step="0.01" value="1">
+    </label>
+    <label>Selling price / unit
+      <input id="selling" type="number" min="0" step="0.01" value="49">
+    </label>
+    <label>Platform fee %
+      <input id="platformFee" type="number" min="0" max="100" step="0.1" value="8">
+    </label>
+    <label>Payment fee %
+      <input id="paymentFee" type="number" min="0" max="100" step="0.1" value="3">
+    </label>
+    <label>Payment fixed fee / order
+      <input id="fixedFee" type="number" min="0" step="0.01" value="0.30">
+    </label>
+    <label>Advertising cost / order
+      <input id="ads" type="number" min="0" step="0.01" value="2">
+    </label>
+    <label>Tax / VAT %
+      <input id="tax" type="number" min="0" max="100" step="0.1" value="5">
+    </label>
+    <label>Discount %
+      <input id="discount" type="number" min="0" max="100" step="0.1" value="0">
+    </label>
+    <label>Target profit margin %
+      <input id="targetMargin" type="number" min="0" max="99.9" step="0.1" value="30">
+    </label>
+  </div>
 
-      <div class="bar"><div id="profitBar"></div></div>
-      <p class="note" id="message">You are making a healthy margin on this sale.</p>
-      <button id="reset" class="secondary">Reset calculator</button>
-    </section>
+  <div class="results">
+    <div class="metric"><span>True cost / unit</span><strong id="cost">$31.00</strong></div>
+    <div class="metric"><span>Net revenue / unit</span><strong id="netRevenue">$43.05</strong></div>
+    <div class="metric"><span>Net profit / unit</span><strong id="profit">$12.05</strong></div>
+    <div class="metric"><span>Profit margin</span><strong id="margin">28.00%</strong></div>
+    <div class="metric"><span>Markup</span><strong id="markup">38.87%</strong></div>
+    <div class="metric"><span>ROI</span><strong id="roi">38.87%</strong></div>
+    <div class="metric"><span>Break-even price</span><strong id="breakEven">$35.41</strong></div>
+    <div class="metric highlight"><span>Recommended price</span><strong id="recommended">$45.07</strong></div>
+    <div class="metric"><span>Estimated total profit</span><strong id="totalProfit">$12.05</strong></div>
+  </div>
 
-    <section class="how">
-      <h2>Built for real-world pricing decisions</h2>
-      <div class="features">
-        <div><b>True cost</b><p>Includes purchase, delivery and additional costs.</p></div>
-        <div><b>Margin vs. markup</b><p>See both numbers so pricing decisions are clearer.</p></div>
-        <div><b>Break-even</b><p>Know the minimum price required to cover your costs.</p></div>
-      </div>
-    </section>
-  </main>
+  <div class="bar"><div id="profitBar"></div></div>
+  <div class="insight" id="message">Your current price is close to your target margin.</div>
 
-  <footer>Smart Profit Calculator · Open source · Made for small businesses</footer>
-  <script src="app.js"></script>
+  <div class="summary">
+    <h3>Pricing summary</h3>
+    <div class="summary-grid">
+      <div><span>Gross sales</span><b id="grossSales">$49.00</b></div>
+      <div><span>Total fees</span><b id="fees">$4.35</b></div>
+      <div><span>Tax</span><b id="taxAmount">$2.45</b></div>
+      <div><span>Total variable costs</span><b id="variableCosts">$31.00</b></div>
+    </div>
+  </div>
+
+  <button id="copy" class="primary">Copy results</button>
+  <span id="copied" class="copied" aria-live="polite"></span>
+</section>
+
+<section class="how">
+  <h2>What this calculator considers</h2>
+  <div class="features">
+    <div><b>True unit economics</b><p>Purchase, shipping, packaging, labor and other unit costs.</p></div>
+    <div><b>Real selling costs</b><p>Platform fees, payment fees, advertising, tax and discounts.</p></div>
+    <div><b>Target pricing</b><p>Calculate a price designed around your target profit margin.</p></div>
+  </div>
+</section>
+</main>
+<footer>Smart Profit Calculator Pro · Open source · Built for small businesses</footer>
+<script src="app.js"></script>
 </body>
 </html>
