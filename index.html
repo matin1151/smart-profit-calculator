@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A free profit margin, markup and break-even calculator for small businesses.">
+  <title>Smart Profit Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">SP</span><span>Smart Profit</span></div>
+    <span class="badge">Free business tool</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">SMALL BUSINESS TOOL</p>
+      <h1>Know your profit before you sell.</h1>
+      <p>Calculate true cost, profit, margin, markup and break-even price in seconds.</p>
+    </section>
+
+    <section class="card">
+      <div class="grid">
+        <label>Product / service
+          <input id="product" placeholder="e.g. Coffee machine">
+        </label>
+        <label>Currency
+          <select id="currency">
+            <option value="$">$ USD</option><option value="€">€ EUR</option>
+            <option value="£">£ GBP</option><option value="﷼">﷼ IRR</option>
+          </select>
+        </label>
+        <label>Purchase cost
+          <input id="purchase" type="number" min="0" step="0.01" value="100">
+        </label>
+        <label>Shipping & delivery
+          <input id="shipping" type="number" min="0" step="0.01" value="10">
+        </label>
+        <label>Other costs
+          <input id="other" type="number" min="0" step="0.01" value="5">
+        </label>
+        <label>Selling price
+          <input id="selling" type="number" min="0" step="0.01" value="180">
+        </label>
+      </div>
+
+      <div class="results">
+        <div class="metric"><span>True cost</span><strong id="cost">$115.00</strong></div>
+        <div class="metric"><span>Profit</span><strong id="profit">$65.00</strong></div>
+        <div class="metric"><span>Profit margin</span><strong id="margin">36.11%</strong></div>
+        <div class="metric"><span>Markup</span><strong id="markup">56.52%</strong></div>
+        <div class="metric"><span>Break-even price</span><strong id="breakEven">$115.00</strong></div>
+        <div class="metric"><span>ROI</span><strong id="roi">56.52%</strong></div>
+      </div>
+
+      <div class="bar"><div id="profitBar"></div></div>
+      <p class="note" id="message">You are making a healthy margin on this sale.</p>
+      <button id="reset" class="secondary">Reset calculator</button>
+    </section>
+
+    <section class="how">
+      <h2>Built for real-world pricing decisions</h2>
+      <div class="features">
+        <div><b>True cost</b><p>Includes purchase, delivery and additional costs.</p></div>
+        <div><b>Margin vs. markup</b><p>See both numbers so pricing decisions are clearer.</p></div>
+        <div><b>Break-even</b><p>Know the minimum price required to cover your costs.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Smart Profit Calculator · Open source · Made for small businesses</footer>
+  <script src="app.js"></script>
+</body>
+</html>
